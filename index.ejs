@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EJS Tags</title>
+</head>
+
+<body>
+  <h1>
+    EJS Tags
+  </h1>
+  <p>
+    Current second: <%= seconds %>
+  </p>
+
+ 
+    <!-- List goes here if current second is even. -->
+    
+  <% if  (seconds % 2===0)  { %>
+    <ul>
+    <% for( let index = 0; index < items.length; index++ ) { %>
+      <li>
+        <%= items[index]%>
+       </li>
+    <% } %>
+  </ul>
+  
+    <!-- Otherwise it should display the following: -->
+    <% } else { %>
+       <p>No items to display</p>
+    <% } %>
+
+    <p><%- htmlContent%></p>
+  <!-- Footer goes here -->
+  <%- include("footer.ejs") %>
+</body>
+
+</html>
